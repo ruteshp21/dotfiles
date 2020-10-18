@@ -1,30 +1,73 @@
-
-ZSH_THEME='powerlevel9k/powerlevel9k'
-LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=36:*.rpm=90'
-
-export PATH="$HOME/.gem/ruby/2.6.0/bin":$PATH
+export PATH="/usr/local/bin:$HOME/.gem/ruby/2.7.0/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
-export LS_COLORS
+export LS_COLORS="di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=36:*.rpm=90"
 
-plugins=(
-  git
-  zsh-autosuggestions
-  web-search
-  extract
-  history
-  sudo
-  zsh-syntax-highlighting
-  colored-man-pages
-  catimg
-  npm
-  pip 
-  python 
-)
+ZSH_THEME="spaceship"
+
+plugins=(z sudo git zsh-syntax-highlighting zsh-autosuggestions spring gradle web-search extract history colored-man-pages npm docker)
 
 source $ZSH/oh-my-zsh.sh
 
-# z extention for browsing
-. $HOME/z.sh
+
+SPACESHIP_PROMPT_ORDER=(
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  package       # Package version
+  node          # Node.js section
+  xcode         # Xcode section
+  docker        # Docker section
+  aws           # Amazon Web Services section
+  gcloud        # Google Cloud Platform section
+  venv          # virtualenv section
+  conda         # conda virtualenv section
+  pyenv         # Pyenv section
+  kubectl       # Kubectl context section
+  terraform     # Terraform workspace section
+  exec_time     # Execution time
+  time          # Time stamps section
+  line_sep      # Line break
+  battery       # Battery level and status
+  vi_mode       # Vi-mode indicator
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
+
+# User (user)
+SPACESHIP_USER_SHOW=always  #Show user section (true, false, always or needed)
+SPACESHIP_USER_PREFIX="with " 	#Prefix before user section
+SPACESHIP_USER_SUFFIX=$SPACESHIP_PROMPT_DEFAULT_SUFFIX 	#Suffix after user section
+SPACESHIP_USER_COLOR=gray 	#Color of user section
+SPACESHIP_USER_COLOR_ROOT=red 	#Color of user section when it's root
+
+# Dir (dir)
+SPACESHIP_DIR_SHOW=true 	#Show directory section
+SPACESHIP_DIR_PREFIX=in     #Prefix before current directory
+SPACESHIP_DIR_SUFFIX=$SPACESHIP_PROMPT_DEFAULT_SUFFIX   #Suffix after current directory
+SPACESHIP_DIR_TRUNC=3 	#Number of folders of cwd to show in prompt, 0 to show all
+#SPACESHIP_DIR_TRUNC_PREFIX 		#Prefix before cwd when it's truncated. For example …/ or .../, empty to disable
+SPACESHIP_DIR_TRUNC_REPO=false 	#While in git repo, show only root directory and folders inside it
+SPACESHIP_DIR_COLOR=blue 	#Color of directory section
+SPACESHIP_DIR_LOCK_SYMBOL= 	#The symbol displayed if directory is write-protected (requires powerline patched font)
+SPACESHIP_DIR_LOCK_COLOR=red 	#Color for the lock symbol
+
+# Hostname (host)
+SPACESHIP_HOST_SHOW=true 	#Show host section (true, false or always)
+SPACESHIP_HOST_SHOW_FULL=false 	#Show full hostname section (true, false)
+SPACESHIP_HOST_PREFIX=at 	#Prefix before the connected SSH machine name
+SPACESHIP_HOST_SUFFIX=$SPACESHIP_PROMPT_DEFAULT_SUFFIX 	#Suffix after the connected SSH machine name
+SPACESHIP_HOST_COLOR=blue 	#Color of host section
+SPACESHIP_HOST_COLOR_SSH=green 	#Color of host in SSH connection
+
+# Time (time)
+SPACESHIP_TIME_SHOW=true    #Show time (set to true for enabling)
+SPACESHIP_TIME_PREFIX="at "   	#Prefix before time section
+SPACESHIP_TIME_SUFFIX=$SPACESHIP_PROMPT_DEFAULT_SUFFIX 	#Suffix after time section
+SPACESHIP_TIME_COLOR=red 	#Color of time section
+SPACESHIP_TIME_FORMAT=false 	#Custom date formatting ZSH date formats
+SPACESHIP_TIME_12HR=true 	#Format time using 12-hour clock (am/pm)
 
 ## common aliases
 alias hello="echo Hello World"
@@ -79,61 +122,3 @@ alias dockerrestart='docker-compose restart'
 alias dockerup='docker-compose up -d'
 alias dockerrm='docker-compose rm --all'
 alias dockerbuild='docker-compose build'
-
-## POWERLEVEL 9K ##
-
-POWERLEVEL9K_MODE='nerdfont-complete'
-
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context ssh root_indicator dir dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status time)
-
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
-
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_SHORTEN_STRATEGY='truncate_beginning'
-
-POWERLEVEL9K_FOLDER_ICON=''
-
-
-POWERLEVEL9K_STATUS_OK_BACKGROUND="clear"
-POWERLEVEL9K_STATUS_OK_FOREGROUND="green"
-POWERLEVEL9K_STATUS_ERROR_BACKGROUND="clear"
-POWERLEVEL9K_STATUS_ERROR_FOREGROUND="red"
-
-POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
-POWERLEVEL9K_STATUS_VERBOSE=false
-
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
-
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{blue}\u256D\u2500%f"
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{blue}\u2570\uf460%f "
-HIST_STAMPS="dd/mm/yyyy"
-DISABLE_UPDATE_PROMPT=true
-
-POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='clear'
-POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='red'
-
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='clear'
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='white'
-
-POWERLEVEL9K_TIME_BACKGROUND="clean"
-POWERLEVEL9K_TIME_FOREGROUND="white"
-POWERLEVEL9K_TIME_FORMAT="\UF43A %D{%I:%M  \UF133  %m.%d.%y}"
-
-POWERLEVEL9K_VCS_CLEAN_FOREGROUND='green'
-POWERLEVEL9K_VCS_CLEAN_BACKGROUND='clear'
-POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='red'
-POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='clear'
-POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='yellow'
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='clear'
-
-POWERLEVEL9K_VCS_UNTRACKED_ICON='\u25CF'
-POWERLEVEL9K_VCS_UNSTAGED_ICON='\u00b1'
-POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\u2193'
-POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'
-POWERLEVEL9K_VCS_COMMIT_ICON="\uf417"
-POWERLEVEL9K_VCS_HIDE_TAGS='false'
-
-
