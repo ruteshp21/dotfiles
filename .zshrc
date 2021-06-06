@@ -1,161 +1,104 @@
-export PATH="/usr/local/bin:$HOME/.gem/ruby/2.7.0/bin:$PATH"
-export ZSH="$HOME/.oh-my-zsh"
-export LS_COLORS="di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=36:*.rpm=90"
+# Flex on the ubuntu users
+neofetch
 
-ZSH_THEME="spaceship"
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
-plugins=(
-  z
-  sudo
-  git
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-  spring
-  gradle
-  web-search
-  extract
-  history
-  colored-man-pages
-  npm
-  docker
-  )
+# Enable colors and change prompt:
+autoload -U colors && colors
 
-source $ZSH/oh-my-zsh.sh
+# History in cache directory:
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.cache/zsh/history
 
-SPACESHIP_PROMPT_ORDER=(
-  time
-  user
-  host
-  dir
-  git
-  node
-  ruby
-  xcode
-  swift
-  golang
-  php
-  rust
-  docker
-  venv
-  pyenv
-  line_sep
-  vi_mode
-  char
-)
+# Basic auto/tab complete:
+autoload -U compinit
+zstyle ':completion:*' menu select
 
-# PROMPT
-SPACESHIP_PROMPT_ADD_NEWLINE=true
-SPACESHIP_PROMPT_SEPARATE_LINE=true
-SPACESHIP_PROMPT_PREFIXES_SHOW=true
-SPACESHIP_PROMPT_SUFFIXES_SHOW=true
-SPACESHIP_PROMPT_DEFAULT_PREFIX="via "
-SPACESHIP_PROMPT_DEFAULT_SUFFIX=" "
+# Auto complete with case insenstivity
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=*' 'l:|=* r:|=*'
 
-# CHAR
-SPACESHIP_CHAR_SYMBOL="➜ "
-SPACESHIP_CHAR_COLOR_SUCCESS=green
-SPACESHIP_CHAR_COLOR_FAILURE=red
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots) # Include hidden files.
 
-# TIME
-SPACESHIP_TIME_SHOW=false
-SPACESHIP_TIME_PREFIX="at "
-SPACESHIP_TIME_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_TIME_FORMAT=false
-SPACESHIP_TIME_12HR=false
-SPACESHIP_TIME_COLOR="yellow"
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
 
-# USER
-SPACESHIP_USER_SHOW=true
-SPACESHIP_USER_PREFIX="with "
-SPACESHIP_USER_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_USER_COLOR="yellow"
-SPACESHIP_USER_COLOR_ROOT="red"
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'left' vi-backward-char
+bindkey -M menuselect 'down' vi-down-line-or-history
+bindkey -M menuselect 'up' vi-up-line-or-history
+bindkey -M menuselect 'right' vi-forward-char
 
-# HOST
-SPACESHIP_HOST_SHOW=true
-SPACESHIP_HOST_PREFIX="at "
-SPACESHIP_HOST_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_HOST_COLOR="green"
+# Fix backspace bug when switching modes
+bindkey "^?" backward-delete-char
 
-# DIR
-SPACESHIP_DIR_SHOW=true
-SPACESHIP_DIR_PREFIX="in "
-SPACESHIP_DIR_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_DIR_TRUNC=3
-SPACESHIP_DIR_COLOR="cyan"
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+   if [[ ${KEYMAP} == vicmd ]] || 
+      [[ $1 = 'block' ]]; then
+      echo -ne '\e[1 q'
+   elif [[ ${KEYMAP} == main ]] || 
+	[[ ${KEYMAP} == viins ]] ||
+        [[ ${KEYMAP} == '' ]] || 
+	[[ $1 = 'beam' ]]; then
+      echo -ne '\e[5 q'
+   fi
+}
+zle -N zle-keymap-select
 
-# GIT
-SPACESHIP_GIT_SHOW=true
-SPACESHIP_GIT_PREFIX="on "
-SPACESHIP_GIT_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_GIT_SYMBOL=" "
+# ci", ci', ci`, di", etc
+autoload -U select-quoted
+zle -N select-quoted
+for m in visual viopp; do
+  for c in {a,i}{\',\",\`}; do
+    bindkey -M $m $c select-quoted
+  done
+done
 
-# GIT BRANCH
-SPACESHIP_GIT_BRANCH_SHOW=true
-SPACESHIP_GIT_BRANCH_PREFIX="$SPACESHIP_GIT_SYMBOL"
-SPACESHIP_GIT_BRANCH_SUFFIX=""
-SPACESHIP_GIT_BRANCH_COLOR="magenta"
+# ci{, ci(, ci<, di{, etc
+autoload -U select-bracketed
+zle -N select-bracketed
+for m in visual viopp; do
+  for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+    bindkey -M $m $c select-bracketed
+  done
+done
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
 
-# GIT STATUS
-SPACESHIP_GIT_STATUS_SHOW=true
-SPACESHIP_GIT_STATUS_PREFIX=" ["
-SPACESHIP_GIT_STATUS_SUFFIX="]"
-SPACESHIP_GIT_STATUS_COLOR="red"
-SPACESHIP_GIT_STATUS_UNTRACKED="?"
-SPACESHIP_GIT_STATUS_ADDED="+"
-SPACESHIP_GIT_STATUS_MODIFIED="!"
-SPACESHIP_GIT_STATUS_RENAMED="»"
-SPACESHIP_GIT_STATUS_DELETED="✘"
-SPACESHIP_GIT_STATUS_STASHED="$"
-SPACESHIP_GIT_STATUS_UNMERGED="="
-SPACESHIP_GIT_STATUS_AHEAD="⇡"
-SPACESHIP_GIT_STATUS_BEHIND="⇣"
-SPACESHIP_GIT_STATUS_DIVERGED="⇕"
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+precmd() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-# NODE
-SPACESHIP_NODE_SHOW=true
-SPACESHIP_NODE_PREFIX="$SPACESHIP_PROMPT_DEFAULT_PREFIX"
-SPACESHIP_NODE_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_NODE_SYMBOL="⬢ "
-SPACESHIP_NODE_DEFAULT_VERSION=""
-SPACESHIP_NODE_COLOR="green"
+# Control bindings for programs
+bindkey -s "^g" "lc\n"
+bindkey -s "^h" "history 1\n"
+bindkey -s "^l" "clear\n"
+bindkey -s "^d" "dlfile\n"
 
-# XCODE
-SPACESHIP_XCODE_SHOW_LOCAL=true
-SPACESHIP_XCODE_SHOW_GLOBAL=false
-SPACESHIP_XCODE_PREFIX="$SPACESHIP_PROMPT_DEFAULT_PREFIX"
-SPACESHIP_XCODE_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_XCODE_SYMBOL="🛠 "
-SPACESHIP_XCODE_COLOR="blue"
+# Load zsh-syntax-highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+# Suggest aliases for commands
+source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh 2>/dev/null
+# Search repos for programs that can't be found
+source /usr/share/doc/pkgfile/command-not-found.zsh 2>/dev/null
 
-# GOLANG
-SPACESHIP_GOLANG_SHOW=true
-SPACESHIP_GOLANG_PREFIX="$SPACESHIP_PROMPT_DEFAULT_PREFIX"
-SPACESHIP_GOLANG_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_GOLANG_SYMBOL="🐹 "
-SPACESHIP_GOLANG_COLOR="cyan"
-
-# DOCKER
-SPACESHIP_DOCKER_SHOW=true
-SPACESHIP_DOCKER_PREFIX="on "
-SPACESHIP_DOCKER_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_DOCKER_SYMBOL="🐳 "
-SPACESHIP_DOCKER_COLOR="cyan"
-
-# PYENV
-SPACESHIP_PYENV_SHOW=true
-SPACESHIP_PYENV_PREFIX="$SPACESHIP_PROMPT_DEFAULT_PREFIX"
-SPACESHIP_PYENV_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_PYENV_SYMBOL="🐍 "
-SPACESHIP_PYENV_COLOR="yellow"
-
-# VI_MODE
-SPACESHIP_VI_MODE_SHOW=true
-SPACESHIP_VI_MODE_PREFIX=""
-SPACESHIP_VI_MODE_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
-SPACESHIP_VI_MODE_INSERT="[I]"
-SPACESHIP_VI_MODE_NORMAL="[N]"
-SPACESHIP_VI_MODE_COLOR="white"
+# Alias
+alias ls="lsd"
+alias l="ls -l"
+alias la="ls -a"
+alias lla="ls -la"
+alias lt="ls --tree"
 
 ## common aliases
 alias hello="echo Hello World"
@@ -169,8 +112,6 @@ alias usage='du -h -d1'
 alias sshdir="cd ~/.ssh"
 alias runp="lsof -i "
 alias md="mkdir "
-alias ll='colorls -lA --sd --group-directories-first'
-alias ls='colorls --group-directories-first'
 alias ..='cd ..'
 alias ...='cd ../..'
 
@@ -212,3 +153,9 @@ alias dockerrestart='docker-compose restart'
 alias dockerup='docker-compose up -d'
 alias dockerrm='docker-compose rm --all'
 alias dockerbuild='docker-compose build'
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/rutesh/.sdkman" 
+[[ -s "/home/rutesh/.sdkman/bin/sdkman-init.sh" ]] && source "/home/rutesh/.sdkman/bin/sdkman-init.sh"
+
+eval "$(starship init zsh)"

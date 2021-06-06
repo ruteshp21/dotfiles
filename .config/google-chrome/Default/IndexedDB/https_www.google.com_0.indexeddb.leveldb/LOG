@@ -1,0 +1,15 @@
+2021/05/23-21:12:25.637 628c Reusing MANIFEST /home/rutesh/.config/google-chrome/Default/IndexedDB/https_www.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/05/23-21:12:25.637 628c Recovering log #4
+2021/05/23-21:12:25.637 628c Reusing old log /home/rutesh/.config/google-chrome/Default/IndexedDB/https_www.google.com_0.indexeddb.leveldb/000004.log 
+2021/05/23-21:12:57.645 628c Level-0 table #8: started
+2021/05/23-21:12:57.646 628c Level-0 table #8: 587 bytes OK
+2021/05/23-21:12:57.647 628c Delete type=0 #4
+2021/05/23-21:12:57.647 628c Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/05/23-21:12:57.647 628c Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01\x02\x01\x0a\x00b\x00i\x00n\x00a\x00r\x00y\x00_\x00b\x006\x004' @ 73 : 1
+2021/05/23-21:12:57.647 628c Compacting 1@1 + 1@2 files
+2021/05/23-21:12:57.648 628c Generated table #9@1: 19 keys, 573 bytes
+2021/05/23-21:12:57.648 628c Compacted 1@1 + 1@2 files => 573 bytes
+2021/05/23-21:12:57.649 628c compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/05/23-21:12:57.649 628c Delete type=2 #5
+2021/05/23-21:12:57.649 628c Delete type=2 #8
+2021/05/23-21:12:57.649 628c Manual compaction at level-1 from '\x00\x01\x01\x02\x01\x0a\x00b\x00i\x00n\x00a\x00r\x00y\x00_\x00b\x006\x004' @ 73 : 1 .. (end); will stop at (end)

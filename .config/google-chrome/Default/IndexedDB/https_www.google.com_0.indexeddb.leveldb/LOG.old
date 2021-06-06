@@ -1,0 +1,6 @@
+2021/05/16-15:58:29.586 1aa13 Creating DB /home/rutesh/.config/google-chrome/Default/IndexedDB/https_www.google.com_0.indexeddb.leveldb since it was missing.
+2021/05/16-15:58:29.589 1aa13 Reusing MANIFEST /home/rutesh/.config/google-chrome/Default/IndexedDB/https_www.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/05/16-15:59:02.221 1aa12 Level-0 table #5: started
+2021/05/16-15:59:02.222 1aa12 Level-0 table #5: 1204 bytes OK
+2021/05/16-15:59:02.223 1aa12 Delete type=0 #3
+2021/05/16-15:59:02.223 1aa12 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

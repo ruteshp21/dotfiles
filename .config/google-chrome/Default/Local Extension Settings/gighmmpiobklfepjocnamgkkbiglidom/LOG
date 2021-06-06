@@ -1,0 +1,26 @@
+2021/06/06-16:10:12.326 32e Reusing MANIFEST /home/rutesh/.config/google-chrome/Default/Local Extension Settings/gighmmpiobklfepjocnamgkkbiglidom/MANIFEST-000001
+2021/06/06-16:10:12.326 32e Recovering log #61
+2021/06/06-16:10:12.326 32e Reusing old log /home/rutesh/.config/google-chrome/Default/Local Extension Settings/gighmmpiobklfepjocnamgkkbiglidom/000061.log 
+2021/06/06-16:11:14.336 32e Level-0 table #64: started
+2021/06/06-16:11:14.420 32e Level-0 table #64: 5813528 bytes OK
+2021/06/06-16:11:14.421 32e Delete type=0 #61
+2021/06/06-16:11:22.085 343 Level-0 table #66: started
+2021/06/06-16:11:22.136 343 Level-0 table #66: 5820669 bytes OK
+2021/06/06-16:11:22.138 343 Delete type=0 #63
+2021/06/06-17:11:14.312 209d Level-0 table #68: started
+2021/06/06-17:11:14.392 209d Level-0 table #68: 5821694 bytes OK
+2021/06/06-17:11:14.394 209d Delete type=0 #65
+2021/06/06-17:11:14.396 209d Compacting 4@0 + 2@1 files
+2021/06/06-17:11:14.477 209d Generated table #69@0: 1 keys, 5820449 bytes
+2021/06/06-17:11:14.479 209d Generated table #70@0: 7 keys, 484 bytes
+2021/06/06-17:11:14.479 209d Compacted 4@0 + 2@1 files => 5820933 bytes
+2021/06/06-17:11:14.480 209d compacted to: files[ 0 2 1 0 0 0 0 ]
+2021/06/06-17:11:14.480 209d Delete type=2 #68
+2021/06/06-17:11:14.480 209d Delete type=2 #58
+2021/06/06-17:11:14.480 209d Delete type=2 #60
+2021/06/06-17:11:14.480 209d Delete type=2 #66
+2021/06/06-17:11:14.480 209d Delete type=2 #64
+2021/06/06-17:11:14.480 209d Delete type=2 #57
+2021/06/06-17:11:38.287 1e45 Level-0 table #72: started
+2021/06/06-17:11:38.364 1e45 Level-0 table #72: 5820649 bytes OK
+2021/06/06-17:11:38.366 1e45 Delete type=0 #67

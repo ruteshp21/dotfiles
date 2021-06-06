@@ -1,0 +1,9 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Material Theme Ocean High Contrast",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font'",
+    "editor.lineHeight": 24,
+    "editor.fontLigatures": true,
+    "explorer.decorations.badges": false
+}

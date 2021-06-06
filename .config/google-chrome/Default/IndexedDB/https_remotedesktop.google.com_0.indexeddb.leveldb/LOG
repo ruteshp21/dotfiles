@@ -1,0 +1,8 @@
+2021/05/30-02:34:10.785 7090 Reusing MANIFEST /home/rutesh/.config/google-chrome/Default/IndexedDB/https_remotedesktop.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/05/30-02:34:10.785 7090 Recovering log #380
+2021/05/30-02:34:10.785 7090 Reusing old log /home/rutesh/.config/google-chrome/Default/IndexedDB/https_remotedesktop.google.com_0.indexeddb.leveldb/000380.log 
+2021/05/30-02:35:00.974 6fd4 Level-0 table #384: started
+2021/05/30-02:35:00.974 6fd4 Level-0 table #384: 0 bytes OK
+2021/05/30-02:35:00.975 6fd4 Delete type=0 #380
+2021/05/30-02:35:00.975 6fd4 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/05/30-02:35:00.975 6fd4 Manual compaction at level-1 from (begin) .. (end); will stop at (end)
