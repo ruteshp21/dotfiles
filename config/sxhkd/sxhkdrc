@@ -1,0 +1,156 @@
+#---BSPWM Bindings---#
+
+# Quit bspwm
+super + shift + Escape
+  prompt "Are you sure you would like to quit this Xsession" "bspc quit"
+
+# Restart bspwm
+super + shift + w
+  bspc wm -r
+
+# Kill Window
+super + shift + q
+  crystal --close
+
+# Focus on window in direction
+super + {h,j,k,l}
+  bspc node -f {west,south,north,east}
+
+# Send window to desktop
+super + shift + {0-9}
+  crystal --send {0-9}
+
+# Send window to desktop and swap to desktop
+super + control + {0-9}
+  bspc node -d {0-9} && bspunhide && bspc desktop -f {0-9}
+
+# Swap nodes the tree from the current nodes parent
+super + control + {Up, Down}
+  bspc node @parent -C {forward, backward}
+
+# Rotate the tree from the current nodes parent
+super + control + {Right, Left}
+  bspc node @parent --rotate {90,270}
+
+# Flip the tree from the current nodes parent
+super + control + {h,j,k,l}
+  bspc node @parent -F {vertical,horizontal,horizontal,vertical}
+
+# Toggle fullscreen on and off
+super + f
+  crystal --fullscreen
+
+# Toggle floating on and off
+super + o
+  bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
+
+# Swap window with direction
+super + shift + {h,j,k,l}
+  bspc node -s {west,south,north,east}
+
+# Focus on desktop
+super + {0-9}
+  crystal --focus {0-9}
+
+# Cycle through desktops
+super + alt + {Left, Right}
+  crystal --focus {prev, next}
+
+# Close all receptacle
+super + shift + i
+  for win in `bspc query -N -n .leaf.\!window`; do bspc node $win -k ; done;
+
+# Insert receptacle
+super + i; {h,j,k,l}
+  bspc node --presel-dir {west,south,north,east} -i
+
+# Move to rectacle
+super + r
+  bspreceptacle
+
+# Balance nodes
+super + e
+  bspc node @/ -B
+
+# Expand a window by moving one of its side outward
+ctrl + alt + {h,j,k,l}
+  bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Contract a window by moving one of its side inward
+ctrl + alt + shift + {h,j,k,l}
+  bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# Move a floating window
+ctrl + alt + {Left,Right,Up,Down}
+  xdo move {-x -20, -x +20, -y -20, -y +20}
+
+# Restart hotkey damon
+super + shift + x
+  killandnotify "sxhkd" "Config reloaded" && sxhkd &
+
+super + shift + {r, s}
+  prompt {"Are you sure you would like to reboot?" "sudo reboot", "Are you sure you would like to shutdown" "sudo shutdown"}
+
+#---Polybar Control---#
+
+super + shift + o
+  reloadpolybar
+
+#---Lock the screen---#
+
+alt + shift + e
+  betterlockscreen -l dimblur
+
+#---Toggle Programs---#
+
+super + shift + c
+  toggleprogram "picom" "--experimental-backends"
+
+#---Pulse Controls---#
+
+super + {F3, F2}
+  pulsevolctrl "output-vol" "alsa_output.pci-0000_28_00.4.analog-stereo" {+2%, -2%}
+
+super + F4
+  pulsevolctrl "output-mute" "alsa_output.pci-0000_28_00.4.analog-stereo"
+
+#---Media Controls---#
+
+super + F8
+  playerctl -p "spotify" next
+
+super + F6
+  playerctl -p "spotify" previous
+
+super + F7
+  playerctl -p "spotify" play-pause
+
+super + F5
+  playerctl -p "spotify" stop
+
+super + slash
+  songnotification
+
+#---Screenshots---#
+
+#---Application Shortcuts---#
+
+super + @space
+  ~/.config/polybar/scripts/launcher.sh
+
+super + d
+  dmenu_run -fn "JetBrainsMonoMedium Nerd Font-10"
+
+super + alt + {b, f, s}
+  {$BROWSER, pcmanfm, spotify}
+
+super + q
+  firefox https://www.youtube.com
+
+#---Terminal Controls---#
+
+super + Return
+  $TERMINAL
+
+super + alt + {r, h}
+  $TERMINAL -e {ranger, htop}

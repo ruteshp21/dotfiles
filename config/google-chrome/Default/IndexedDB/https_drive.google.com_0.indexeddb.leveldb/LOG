@@ -1,0 +1,25 @@
+2021/06/20-22:52:12.201 1338 Reusing MANIFEST /home/rutesh/.config/google-chrome/Default/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/06/20-22:52:12.201 1338 Recovering log #4
+2021/06/20-22:52:12.213 1338 Reusing old log /home/rutesh/.config/google-chrome/Default/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/000004.log 
+2021/06/20-22:52:14.589 130e Level-0 table #8: started
+2021/06/20-22:52:14.603 130e Level-0 table #8: 1706520 bytes OK
+2021/06/20-22:52:14.604 130e Delete type=0 #4
+2021/06/20-22:52:14.606 130e Compacting 1@1 + 1@2 files
+2021/06/20-22:52:14.630 130e Generated table #9@1: 2855 keys, 2121525 bytes
+2021/06/20-22:52:14.638 130e Generated table #10@1: 3282 keys, 784311 bytes
+2021/06/20-22:52:14.638 130e Compacted 1@1 + 1@2 files => 2905836 bytes
+2021/06/20-22:52:14.638 130e compacted to: files[ 0 0 2 0 0 0 0 ]
+2021/06/20-22:52:14.649 130e Level-0 table #12: started
+2021/06/20-22:52:14.663 130e Level-0 table #12: 1724145 bytes OK
+2021/06/20-22:52:14.664 130e Delete type=2 #8
+2021/06/20-22:52:14.664 130e Delete type=0 #7
+2021/06/20-22:52:14.664 130e Delete type=2 #5
+2021/06/20-22:52:46.883 1337 Compacting 1@1 + 2@2 files
+2021/06/20-22:52:46.902 1337 Generated table #13@1: 7800 keys, 2147150 bytes
+2021/06/20-22:52:46.918 1337 Generated table #14@1: 2026 keys, 2120203 bytes
+2021/06/20-22:52:46.923 1337 Generated table #15@1: 4421 keys, 343376 bytes
+2021/06/20-22:52:46.923 1337 Compacted 1@1 + 2@2 files => 4610729 bytes
+2021/06/20-22:52:46.924 1337 compacted to: files[ 0 0 3 0 0 0 0 ]
+2021/06/20-22:52:46.924 1337 Delete type=2 #9
+2021/06/20-22:52:46.924 1337 Delete type=2 #10
+2021/06/20-22:52:46.924 1337 Delete type=2 #12

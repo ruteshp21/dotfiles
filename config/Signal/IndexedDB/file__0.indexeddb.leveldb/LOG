@@ -1,0 +1,17 @@
+2021/06/15-12:42:21.340 5c8b Reusing MANIFEST /home/rutesh/.config/Signal/IndexedDB/file__0.indexeddb.leveldb/MANIFEST-000001
+2021/06/15-12:42:21.496 5c84 Level-0 table #5: started
+2021/06/15-12:42:21.497 5c84 Level-0 table #5: 492 bytes OK
+2021/06/15-12:42:21.498 5c84 Delete type=0 #3
+2021/06/15-12:42:21.498 5c84 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2021/06/15-12:42:23.498 5c8a Level-0 table #7: started
+2021/06/15-12:42:23.499 5c8a Level-0 table #7: 218 bytes OK
+2021/06/15-12:42:23.500 5c8a Delete type=0 #4
+2021/06/15-12:42:23.500 5c8a Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2021/06/15-12:42:23.500 5c8a Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x00\x00\x002\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00' @ 21 : 0
+2021/06/15-12:42:23.500 5c8a Compacting 1@1 + 1@2 files
+2021/06/15-12:42:23.501 5c8a Generated table #8@1: 4 keys, 221 bytes
+2021/06/15-12:42:23.501 5c8a Compacted 1@1 + 1@2 files => 221 bytes
+2021/06/15-12:42:23.502 5c8a compacted to: files[ 0 0 1 0 0 0 0 ]
+2021/06/15-12:42:23.502 5c8a Delete type=2 #7
+2021/06/15-12:42:23.502 5c8a Delete type=2 #5
+2021/06/15-12:42:23.502 5c8a Manual compaction at level-1 from '\x00\x00\x00\x002\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00' @ 21 : 0 .. (end); will stop at (end)

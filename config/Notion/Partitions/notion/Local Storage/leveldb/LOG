@@ -1,0 +1,99 @@
+2021/06/15-13:18:33.775 5daf Reusing MANIFEST /home/rutesh/.config/Notion/Partitions/notion/Local Storage/leveldb/MANIFEST-000001
+2021/06/15-13:18:33.775 5daf Recovering log #4
+2021/06/15-13:18:33.775 5daf Reusing old log /home/rutesh/.config/Notion/Partitions/notion/Local Storage/leveldb/000004.log 
+2021/06/15-13:38:39.847 5e15 Level-0 table #8: started
+2021/06/15-13:38:39.848 5e15 Level-0 table #8: 15908 bytes OK
+2021/06/15-13:38:39.849 5e15 Delete type=0 #4
+2021/06/15-13:57:22.111 6145 Level-0 table #10: started
+2021/06/15-13:57:22.112 6145 Level-0 table #10: 15984 bytes OK
+2021/06/15-13:57:22.113 6145 Delete type=0 #7
+2021/06/15-14:08:39.847 6145 Level-0 table #12: started
+2021/06/15-14:08:39.849 6145 Level-0 table #12: 15715 bytes OK
+2021/06/15-14:08:39.850 6145 Delete type=0 #9
+2021/06/15-14:58:39.847 628c Level-0 table #14: started
+2021/06/15-14:58:39.848 628c Level-0 table #14: 14435 bytes OK
+2021/06/15-14:58:39.849 628c Delete type=0 #11
+2021/06/15-15:48:39.847 628e Level-0 table #16: started
+2021/06/15-15:48:39.849 628e Level-0 table #16: 14435 bytes OK
+2021/06/15-15:48:39.851 628e Delete type=0 #13
+2021/06/15-15:48:39.851 628c Compacting 4@0 + 1@1 files
+2021/06/15-15:48:39.853 628c Generated table #17@0: 56 keys, 10083 bytes
+2021/06/15-15:48:39.853 628c Compacted 4@0 + 1@1 files => 10083 bytes
+2021/06/15-15:48:39.854 628c compacted to: files[ 0 1 1 0 0 0 0 ]
+2021/06/15-15:48:39.854 628c Delete type=2 #16
+2021/06/15-15:48:39.854 628c Delete type=2 #8
+2021/06/15-15:48:39.854 628c Delete type=2 #10
+2021/06/15-15:48:39.854 628c Delete type=2 #12
+2021/06/15-15:48:39.854 628c Delete type=2 #14
+2021/06/15-16:38:39.847 697e Level-0 table #19: started
+2021/06/15-16:38:39.848 697e Level-0 table #19: 14435 bytes OK
+2021/06/15-16:38:39.850 697e Delete type=0 #15
+2021/06/15-17:28:39.850 628e Level-0 table #21: started
+2021/06/15-17:28:39.851 628e Level-0 table #21: 14435 bytes OK
+2021/06/15-17:28:39.852 628e Delete type=0 #18
+2021/06/15-18:18:39.851 697e Level-0 table #23: started
+2021/06/15-18:18:39.852 697e Level-0 table #23: 14438 bytes OK
+2021/06/15-18:18:39.853 697e Delete type=0 #20
+2021/06/15-19:08:39.852 628e Level-0 table #25: started
+2021/06/15-19:08:39.853 628e Level-0 table #25: 14435 bytes OK
+2021/06/15-19:08:39.854 628e Delete type=0 #22
+2021/06/15-19:08:39.854 697e Compacting 4@0 + 1@1 files
+2021/06/15-19:08:39.855 697e Generated table #26@0: 56 keys, 10083 bytes
+2021/06/15-19:08:39.855 697e Compacted 4@0 + 1@1 files => 10083 bytes
+2021/06/15-19:08:39.856 697e compacted to: files[ 0 1 1 0 0 0 0 ]
+2021/06/15-19:08:39.857 697e Delete type=2 #25
+2021/06/15-19:08:39.857 697e Delete type=2 #21
+2021/06/15-19:08:39.857 697e Delete type=2 #23
+2021/06/15-19:08:39.857 697e Delete type=2 #19
+2021/06/15-19:08:39.857 697e Delete type=2 #17
+2021/06/15-19:58:39.850 697e Level-0 table #28: started
+2021/06/15-19:58:39.852 697e Level-0 table #28: 14435 bytes OK
+2021/06/15-19:58:39.853 697e Delete type=0 #24
+2021/06/15-20:48:39.851 697e Level-0 table #30: started
+2021/06/15-20:48:39.852 697e Level-0 table #30: 14435 bytes OK
+2021/06/15-20:48:39.853 697e Delete type=0 #27
+2021/06/15-21:38:39.851 697e Level-0 table #32: started
+2021/06/15-21:38:39.852 697e Level-0 table #32: 14439 bytes OK
+2021/06/15-21:38:39.853 697e Delete type=0 #29
+2021/06/15-22:28:39.851 697e Level-0 table #34: started
+2021/06/15-22:28:39.852 697e Level-0 table #34: 14435 bytes OK
+2021/06/15-22:28:39.854 697e Delete type=0 #31
+2021/06/15-22:28:39.854 628e Compacting 4@0 + 1@1 files
+2021/06/15-22:28:39.855 628e Generated table #35@0: 56 keys, 10083 bytes
+2021/06/15-22:28:39.855 628e Compacted 4@0 + 1@1 files => 10083 bytes
+2021/06/15-22:28:39.856 628e compacted to: files[ 0 1 1 0 0 0 0 ]
+2021/06/15-22:28:39.856 628e Delete type=2 #28
+2021/06/15-22:28:39.856 628e Delete type=2 #34
+2021/06/15-22:28:39.856 628e Delete type=2 #26
+2021/06/15-22:28:39.856 628e Delete type=2 #30
+2021/06/15-22:28:39.856 628e Delete type=2 #32
+2021/06/15-23:18:39.850 628e Level-0 table #37: started
+2021/06/15-23:18:39.852 628e Level-0 table #37: 14435 bytes OK
+2021/06/15-23:18:39.853 628e Delete type=0 #33
+2021/06/16-00:08:39.850 628e Level-0 table #39: started
+2021/06/16-00:08:39.851 628e Level-0 table #39: 14508 bytes OK
+2021/06/16-00:08:39.852 628e Delete type=0 #36
+2021/06/16-00:58:39.851 628e Level-0 table #41: started
+2021/06/16-00:58:39.852 628e Level-0 table #41: 14435 bytes OK
+2021/06/16-00:58:39.853 628e Delete type=0 #38
+2021/06/16-01:48:39.852 697e Level-0 table #43: started
+2021/06/16-01:48:39.853 697e Level-0 table #43: 14435 bytes OK
+2021/06/16-01:48:39.854 697e Delete type=0 #40
+2021/06/16-01:48:39.854 628e Compacting 4@0 + 1@1 files
+2021/06/16-01:48:39.856 628e Generated table #44@0: 56 keys, 10093 bytes
+2021/06/16-01:48:39.856 628e Compacted 4@0 + 1@1 files => 10093 bytes
+2021/06/16-01:48:39.857 628e compacted to: files[ 0 1 1 0 0 0 0 ]
+2021/06/16-01:48:39.857 628e Delete type=2 #37
+2021/06/16-01:48:39.857 628e Delete type=2 #35
+2021/06/16-01:48:39.857 628e Delete type=2 #39
+2021/06/16-01:48:39.857 628e Delete type=2 #43
+2021/06/16-01:48:39.857 628e Delete type=2 #41
+2021/06/16-02:38:39.850 697e Level-0 table #46: started
+2021/06/16-02:38:39.851 697e Level-0 table #46: 14527 bytes OK
+2021/06/16-02:38:39.852 697e Delete type=0 #42
+2021/06/16-03:28:39.850 628e Level-0 table #48: started
+2021/06/16-03:28:39.852 628e Level-0 table #48: 14435 bytes OK
+2021/06/16-03:28:39.853 628e Delete type=0 #45
+2021/06/16-04:18:39.850 697e Level-0 table #50: started
+2021/06/16-04:18:39.851 697e Level-0 table #50: 14436 bytes OK
+2021/06/16-04:18:39.852 697e Delete type=0 #47

@@ -1,0 +1,9 @@
+AntSupport
+DevKit
+Subversion
+com.android.tools.idea.smali
+com.intellij.uiDesigner
+com.jetbrains.changeReminder
+hg4idea
+org.jetbrains.android
+org.jetbrains.plugins.javaFX

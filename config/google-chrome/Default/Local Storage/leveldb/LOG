@@ -1,0 +1,6 @@
+2021/06/20-22:52:05.433 3 Reusing MANIFEST /home/rutesh/.config/google-chrome/Default/Local Storage/leveldb/MANIFEST-000001
+2021/06/20-22:52:05.434 3 Recovering log #3
+2021/06/20-22:52:05.434 3 Reusing old log /home/rutesh/.config/google-chrome/Default/Local Storage/leveldb/000003.log 
+2021/06/20-22:53:40.957 5 Level-0 table #5: started
+2021/06/20-22:53:40.959 5 Level-0 table #5: 16633 bytes OK
+2021/06/20-22:53:40.960 5 Delete type=0 #3
